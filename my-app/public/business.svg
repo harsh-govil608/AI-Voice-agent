@@ -1,0 +1,8 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="200" fill="#B91C1C"/>
+        <circle cx="100" cy="100" r="60" fill="#FFFFFF" opacity="0.2"/>
+        <text x="100" y="100" font-family="Arial, sans-serif" font-size="24" font-weight="bold" 
+              fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">
+            BUS
+        </text>
+    </svg>

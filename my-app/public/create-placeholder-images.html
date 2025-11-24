@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Placeholder Images</title>
+</head>
+<body>
+    <h1>Placeholder Image Generator</h1>
+    <p>This page generates placeholder images. Right-click each image and save it with the specified filename in the /public folder.</p>
+    
+    <h2>Coaching Icons (Save as .png files)</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <div>
+            <canvas id="lecture" width="200" height="200"></canvas>
+            <p>Save as: lecture.png</p>
+        </div>
+        <div>
+            <canvas id="interview" width="200" height="200"></canvas>
+            <p>Save as: interview.png</p>
+        </div>
+        <div>
+            <canvas id="qa" width="200" height="200"></canvas>
+            <p>Save as: qa.png</p>
+        </div>
+        <div>
+            <canvas id="language" width="200" height="200"></canvas>
+            <p>Save as: language.png</p>
+        </div>
+        <div>
+            <canvas id="meditation" width="200" height="200"></canvas>
+            <p>Save as: meditation.png</p>
+        </div>
+        <div>
+            <canvas id="career" width="200" height="200"></canvas>
+            <p>Save as: career.png</p>
+        </div>
+        <div>
+            <canvas id="tech" width="200" height="200"></canvas>
+            <p>Save as: tech.png</p>
+        </div>
+        <div>
+            <canvas id="business" width="200" height="200"></canvas>
+            <p>Save as: business.png</p>
+        </div>
+    </div>
+    
+    <h2>Avatar Images (Save as specified)</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <div>
+            <canvas id="t1" width="200" height="200"></canvas>
+            <p>Save as: t1.jpg</p>
+        </div>
+        <div>
+            <canvas id="t2" width="200" height="200"></canvas>
+            <p>Save as: t2.jpg</p>
+        </div>
+        <div>
+            <canvas id="t3" width="200" height="200"></canvas>
+            <p>Save as: t3.jpg</p>
+        </div>
+        <div>
+            <canvas id="t4" width="200" height="200"></canvas>
+            <p>Save as: t4.jpg</p>
+        </div>
+        <div>
+            <canvas id="t5" width="200" height="200"></canvas>
+            <p>Save as: t5.jpg</p>
+        </div>
+        <div>
+            <canvas id="default-avatar" width="200" height="200"></canvas>
+            <p>Save as: default-avatar.png</p>
+        </div>
+    </div>
+
+    <script>
+        // Function to draw icon
+        function drawIcon(canvasId, text, bgColor, icon) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = bgColor;
+            ctx.fillRect(0, 0, 200, 200);
+            
+            // Circle background
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(100, 100, 60, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Icon/Text
+            ctx.fillStyle = bgColor;
+            ctx.font = '60px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(icon, 100, 100);
+        }
+        
+        // Function to draw avatar
+        function drawAvatar(canvasId, initials, bgColor) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, 200, 200);
+            gradient.addColorStop(0, bgColor);
+            gradient.addColorStop(1, adjustColor(bgColor, -30));
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 200, 200);
+            
+            // Circle
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+            ctx.beginPath();
+            ctx.arc(100, 100, 80, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Initials
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 48px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(initials, 100, 100);
+        }
+        
+        // Helper function to adjust color brightness
+        function adjustColor(color, amount) {
+            const num = parseInt(color.replace('#', ''), 16);
+            const r = Math.max(0, Math.min(255, (num >> 16) + amount));
+            const g = Math.max(0, Math.min(255, ((num >> 8) & 0x00FF) + amount));
+            const b = Math.max(0, Math.min(255, (num & 0x0000FF) + amount));
+            return '#' + ((r << 16) | (g << 8) | b).toString(16).padStart(6, '0');
+        }
+        
+        // Draw coaching icons
+        drawIcon('lecture', 'Lecture', '#4F46E5', '📚');
+        drawIcon('interview', 'Interview', '#059669', '💼');
+        drawIcon('qa', 'Q&A', '#DC2626', '❓');
+        drawIcon('language', 'Language', '#7C3AED', '🌐');
+        drawIcon('meditation', 'Meditation', '#0891B2', '🧘');
+        drawIcon('career', 'Career', '#EA580C', '🎯');
+        drawIcon('tech', 'Tech', '#0F766E', '💻');
+        drawIcon('business', 'Business', '#B91C1C', '📊');
+        
+        // Draw avatars
+        drawAvatar('t1', 'SC', '#6366F1');
+        drawAvatar('t2', 'JM', '#10B981');
+        drawAvatar('t3', 'MP', '#F59E0B');
+        drawAvatar('t4', 'AR', '#EF4444');
+        drawAvatar('t5', 'SW', '#8B5CF6');
+        drawAvatar('default-avatar', 'AI', '#6B7280');
+    </script>
+</body>
+</html>

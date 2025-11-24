@@ -1,0 +1,145 @@
+export const CoachingOptions=[
+    {
+        name: "Lecture on Topic",
+        icon: "/lecture.svg",
+        description: "Get comprehensive lectures on any topic with interactive Q&A",
+        duration: "15-30 mins",
+        level: "All levels"
+    },
+    {
+        name: "Mock Interview",
+        icon: "/interview.svg",
+        description: "Practice interviews with real-time feedback and performance analysis",
+        duration: "20-45 mins",
+        level: "Professional"
+    },
+    {
+        name: "Q&A Preparation",
+        icon: "/qa.svg",
+        description: "Prepare for exams, presentations, or meetings with targeted practice",
+        duration: "10-20 mins",
+        level: "Student/Professional"
+    },
+    {
+        name: "Language Skills",
+        icon: "/language.svg",
+        description: "Improve pronunciation, vocabulary, and conversational fluency",
+        duration: "15-30 mins",
+        level: "Beginner to Advanced"
+    },
+    {
+        name: "Meditation & Wellness",
+        icon: "/meditation.svg",
+        description: "Guided meditation and mental wellness sessions",
+        duration: "10-25 mins",
+        level: "All levels"
+    },
+    {
+        name: "Career Coaching",
+        icon: "/career.svg",
+        description: "Career guidance, resume review, and professional development",
+        duration: "20-40 mins",
+        level: "Professional"
+    },
+    {
+        name: "Technical Training",
+        icon: "/tech.svg",
+        description: "Learn programming, AI/ML, and technical concepts interactively",
+        duration: "25-45 mins",
+        level: "Beginner to Expert"
+    },
+    {
+        name: "Business Strategy",
+        icon: "/business.svg",
+        description: "Business planning, startup advice, and strategic consultation",
+        duration: "30-45 mins",
+        level: "Entrepreneur/Executive"
+    }
+]
+
+export const CoachingExperts=[
+    {
+        name: "Dr. Sophia Chen",
+        avatar: "/t1.svg",
+        expertise: ["Technical Training", "Career Coaching", "Mock Interview"],
+        voice: "professional",
+        personality: "Analytical and supportive, focuses on practical solutions",
+        languages: ["English", "Mandarin", "Spanish"],
+        rating: 4.9,
+        sessions: 1250
+    },
+    {
+        name: "Prof. James Mitchell",
+        avatar: "/t2.jpg",
+        expertise: ["Lecture on Topic", "Q&A Preparation", "Business Strategy"],
+        voice: "warm",
+        personality: "Encouraging educator with decades of experience",
+        languages: ["English", "French", "German"],
+        rating: 4.8,
+        sessions: 2100
+    },
+    {
+        name: "Maya Patel",
+        avatar: "/t3.jpg",
+        expertise: ["Language Skills", "Meditation & Wellness", "Career Coaching"],
+        voice: "calm",
+        personality: "Empathetic and patient, creates safe learning environment",
+        languages: ["English", "Hindi", "Bengali", "Tamil"],
+        rating: 4.95,
+        sessions: 1800
+    },
+    {
+        name: "Alex Rodriguez",
+        avatar: "/t4.jpg",
+        expertise: ["Mock Interview", "Business Strategy", "Technical Training"],
+        voice: "energetic",
+        personality: "Dynamic and motivating, pushes for excellence",
+        languages: ["English", "Spanish", "Portuguese"],
+        rating: 4.85,
+        sessions: 950
+    },
+    {
+        name: "Dr. Sarah Williams",
+        avatar: "/t5.jpg",
+        expertise: ["Q&A Preparation", "Language Skills", "Lecture on Topic"],
+        voice: "clear",
+        personality: "Methodical and thorough, ensures deep understanding",
+        languages: ["English", "Arabic", "Urdu"],
+        rating: 4.92,
+        sessions: 1650
+    }
+]
+
+export const VoiceSettings = {
+    providers: {
+        openai: {
+            models: ["whisper-1"],
+            voices: ["alloy", "echo", "fable", "onyx", "nova", "shimmer"]
+        },
+        elevenlabs: {
+            models: ["eleven_multilingual_v2"],
+            voices: ["rachel", "domi", "bella", "antoni", "elli", "josh"]
+        },
+        google: {
+            models: ["en-US-Neural2-C", "en-US-Neural2-D", "en-US-Neural2-F"],
+            languages: ["en-US", "en-GB", "en-AU", "en-IN"]
+        }
+    },
+    quality: {
+        high: { sampleRate: 48000, bitrate: 192 },
+        medium: { sampleRate: 24000, bitrate: 128 },
+        low: { sampleRate: 16000, bitrate: 64 }
+    }
+}
+
+export const AnalyticsMetrics = {
+    speechMetrics: [
+        "clarity", "pace", "volume", "pronunciation", "fluency"
+    ],
+    engagementMetrics: [
+        "attention", "interaction_frequency", "response_quality", "topic_relevance"
+    ],
+    learningMetrics: [
+        "comprehension", "retention", "application", "improvement_rate"
+    ]
+}
